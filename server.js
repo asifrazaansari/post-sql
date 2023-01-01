@@ -1,4 +1,4 @@
-require("dotenv").config(); // ALLOWS ENVIRONMENT VARIABLES TO BE SET ON PROCESS.ENV SHOULD BE AT TOP
+require("dotenv").config()
 
 const express = require("express");
 const app = express();
@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json()); // parse json bodies in the request object
 
 // Redirect requests to endpoint starting with /posts to postRoutes.js
-// app.use("/posts", require("./routes/postRoutes"));
+app.use("/posts", require("./routes/postRoutes"));
 
 // Global Error Handler. IMPORTANT function params MUST start with err
 app.use((err, req, res, next) => {
